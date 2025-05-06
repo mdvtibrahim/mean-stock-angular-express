@@ -1,0 +1,97 @@
+<h2 class="relative text-2xl font-semibold text-center mb-6r">
+  <span>
+    <i class="fab fa-angular text-red-600 mr-2"></i>
+    {{!isUpdated ? 'Create Student' : 'Update Student'}}
+  </span>
+  <button (click)="logout()" class="text-xl text-gray-700 hover:text-red-600" title="Logout">
+    <i class="fas fa-power-off"></i>
+  </button>
+</h2>
+
+<form [formGroup]="studentForm" class="max-w-xl mx-auto p-6 bg-white rounded-lg shadow">
+  <div>
+    <label class="block mb-1 font-medium text-gray-700">Name</label>
+    <input type="text" formControlName="name" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+  </div>
+  <div>
+    <label class="block mb-1 font-medium text-gray-700">Age</label>
+    <input type="text" formControlName="age" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+  </div>
+  <div>
+    <label class="block mb-1 font-medium text-gray-700">Total Mark</label>
+    <input type="text" formControlName="total" class="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+  </div>
+  <button type="button" (click)="onSubmint()" class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded">
+    <i class="fas fa-paper-plane mr-2"></i>{{!isUpdated ? 'Submit' : 'Update'}}
+  </button>
+</form>
+
+<div class="student-table mt-10">
+  <div class="student-header grid grid-cols-4 gap-2 font-bold bg-gray-100 text-gray-700 px-4 py-2 border border-gray-300">
+    <div><i class="fas fa-user mr-1"></i>Name</div>
+    <div><i class="fas fa-birthday-cake mr-1"></i>Age</div>
+    <div><i class="fas fa-star-half-alt mr-1"></i>Total</div>
+    <div><i class="fas fa-cogs mr-1"></i>Actions</div>
+  </div>
+
+  <div 
+    *ngFor="let list of studentList" 
+    class="student-row grid grid-cols-4 gap-2 items-center px-4 py-2 border border-t-0 border-gray-300 hover:bg-gray-100 cursor-pointer">
+    <div>
+      <!-- <i class="fas fa-sync-alt mr-1 text-blue-600"></i> -->
+      <i class="fas fa-edit mr-1 text-blue-600"(click)="goToEdit(list)"></i>{{list.name}}</div>
+    <div>{{list.age}}</div>
+    <div>{{list.total}}</div>
+    <div>
+      <button 
+        (click)="deletedId(list, $event)" 
+        class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
+        title="Delete"
+      >
+        <i class="fas fa-trash-alt"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- <h2>{{!isUpdated?'Create Student':'Update Student'}}<button (click)="logout()">⏻</button></h2>
+
+<form [formGroup]="studentForm">  
+    <div class="">
+        <label>Name</label>
+        <input type="text" formControlName="name">
+    </div>
+    <div class="">
+        <label class="">Age</label>
+        <input type="text" formControlName="age">
+    </div>
+    <div class="">
+        <label>Total Mark</label>
+        <input type="text" formControlName="total">
+    </div>
+    <button type="button" (click)="onSubmint()">{{!isUpdated?'Submit':'Update'}}</button>
+</form>
+
+<div class="student-table">
+    <div class="student-header">
+      <div>Name</div>
+      <div>Age</div>
+      <div>Total</div>
+      <div>Actions</div>
+    </div>
+  
+    <div 
+      class="student-row" 
+      *ngFor="let list of studentList" 
+      (click)="goToEdit(list)"
+    >
+      <div>🔃{{list.name}}</div>
+      <div>{{list.age}}</div>
+      <div>{{list.total}}</div>
+      <div>
+        <button (click)="deletedId(list, $event)">❌</button>
+      </div>
+    </div>
+  </div>   -->
+  

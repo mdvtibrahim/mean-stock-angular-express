@@ -1,0 +1,22 @@
+<h2>Login</h2>
+<form [formGroup]="loginForm"> 
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input id="username" type="text" formControlName="username">
+        <div class="error-message" *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched">
+            <span>invalid enter 6 valid char</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" type="password" formControlName="password">
+        <div class="error-message" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+            <span>invalid enter 4 valid char</span>
+        </div>
+    </div>
+    <a routerLink="/auth/register"> create account</a>   
+    <button type="button" [disabled]="loginForm.invalid" (click)="loginSubmit()">Login</button>
+    <span class="success-message" *ngIf="isSuccess">User Login✔️</span>
+    <span class="error-message" *ngIf="isErr">Not a user❌</span>
+
+</form>

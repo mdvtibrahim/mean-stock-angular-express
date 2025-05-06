@@ -1,0 +1,112 @@
+/* Container for the form */
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+}
+
+/* Style for the <h2> heading */
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center; /* Center the heading */
+}
+
+/* Label styles */
+form label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Input field styles */
+form input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-sizing: border-box; /* Ensure padding doesn't cause overflow */
+    transition: border-color 0.3s ease;
+}
+
+form input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Button styles */
+form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Add bottom margin for each form control */
+form div {
+    margin-bottom: 15px;
+}
+.student-table {
+    width: 100%;
+    margin: 20px 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .student-header, .student-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto; /* 4 columns: Name, Age, Total, Actions */
+    padding: 10px;
+    border: 1px solid #ddd;
+    align-items: center;
+  }
+  
+  .student-header {
+    background-color: #f4f4f4;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .student-row:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .student-row:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .student-row div {
+    font-size: 14px;
+  }
+  
+  button {
+    padding: 5px 10px;
+    border: none;
+    // background-color: red;
+    color: white;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: rgba(224, 65, 65, 0.505);
+  }
+  
+  
